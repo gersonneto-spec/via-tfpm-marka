@@ -192,6 +192,74 @@ footer b{color:#fff}
 .lb img{max-width:100%; max-height:78vh; border-radius:10px; background:#fff; object-fit:contain}
 .lb figcaption{color:#fff; font-size:14px; display:flex; justify-content:space-between; gap:12px; align-items:center}
 .lb .btn{background:transparent; color:#fff; border-color:rgba(255,255,255,.4)}
+
+/* entenda a via */
+.topnav{display:flex; gap:4px; flex-wrap:wrap}
+.topnav a{font-family:var(--disp); font-weight:600; font-size:13px; color:var(--tinta2); text-decoration:none; padding:6px 10px; border-radius:8px}
+.topnav a:hover{background:var(--azul-fr2); color:var(--azul)}
+.learn{padding-block:48px 8px}
+.learn-grid{display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:0; background:var(--branco); border:1px solid var(--linha); border-radius:16px; overflow:hidden}
+@media (max-width:900px){.learn-grid{grid-template-columns:1fr}}
+.learn-draw{padding:18px 18px 12px; background:#F4F7FB; border-right:1px solid var(--linha)}
+@media (max-width:900px){.learn-draw{border-right:0; border-bottom:1px solid var(--linha)}}
+#corte{display:block; width:100%; height:auto}
+#corte .lbl{cursor:pointer}
+#corte .lbl text{font-family:var(--corpo); font-size:14px; fill:var(--tinta2); transition:fill .2s}
+#corte .lbl:hover text,#corte .lbl.on text{fill:var(--azul); font-weight:700}
+#corte .lbl rect{fill:transparent}
+#corte .part{cursor:pointer; transition:opacity .2s}
+#corte .dim{opacity:.35}
+#fan line{transition:opacity .5s}
+#fan.off line,#wheels.off,#wheels.off *{opacity:0}
+#wheels,#gauge{transition:opacity .4s}
+@media (prefers-reduced-motion:no-preference){@keyframes desce{to{stroke-dashoffset:-16}} #fan line{stroke-dasharray:5 4; animation:desce 1s linear infinite}}
+.switch{display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:14px; color:var(--tinta); cursor:pointer; background:none; border:1px solid var(--linha); border-radius:999px; padding:7px 14px 7px 8px}
+.switch .trk{width:34px; height:20px; border-radius:10px; background:var(--linha); position:relative; transition:background .2s}
+.switch .trk::after{content:""; position:absolute; left:3px; top:3px; width:14px; height:14px; border-radius:50%; background:#fff; transition:transform .2s}
+.switch[aria-pressed="true"] .trk{background:var(--azul)}
+.switch[aria-pressed="true"] .trk::after{transform:translateX(14px)}
+.learn-tools{display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-top:8px}
+.learn-tools .hint{font-size:13.5px; color:var(--tinta2)}
+.learn-info{padding:26px 28px; display:grid; gap:14px; align-content:start}
+.learn-info h3{font-size:24px; font-weight:800}
+.qa{display:grid; gap:12px}
+.qa div{display:grid; gap:2px}
+.qa b{font-family:var(--disp); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--azul)}
+.qa span{font-size:15.5px; color:var(--tinta)}
+.qa .ana{background:var(--azul-fr); border-radius:10px; padding:12px 14px}
+.chips-l{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+.chips-l button{border:1px solid var(--linha); background:var(--branco); border-radius:999px; padding:5px 11px; font-size:13px; font-weight:700; color:var(--tinta2)}
+.chips-l button.on{background:var(--azul); border-color:var(--azul); color:#fff}
+
+.sim{margin-top:24px; background:var(--branco); border:1px solid var(--linha); border-radius:16px; overflow:hidden}
+.sim-head{padding:22px 28px 6px; display:grid; gap:6px}
+.sim-head h3{font-size:22px; font-weight:800}
+.sim-head p{color:var(--tinta2); max-width:74ch}
+.sim-body{padding:10px 28px 24px; display:grid; gap:14px}
+.seg{justify-self:start; display:inline-flex; border:1px solid var(--linha); border-radius:999px; padding:3px; gap:3px; flex-wrap:wrap}
+.seg button{border:0; background:none; border-radius:999px; padding:8px 14px; font-weight:700; font-size:13.5px; color:var(--tinta2)}
+.seg button.on{background:var(--azul); color:#fff}
+.slider{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.slider label{font-weight:700; font-size:14px}
+.slider input{flex:1; min-width:180px; accent-color:var(--azul)}
+.slider output{font-family:var(--disp); font-weight:800; font-size:20px; min-width:70px; text-align:right; font-variant-numeric:tabular-nums}
+#railsvg{display:block; width:100%; height:auto; background:#F4F7FB; border-radius:12px}
+.kpis{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px}
+@media (max-width:700px){.kpis{grid-template-columns:1fr}}
+.kpis div{background:var(--azul-fr2); border:1px solid var(--linha); border-radius:12px; padding:12px 16px}
+.kpis small{display:block; font-size:12.5px; color:var(--tinta2)}
+.kpis b{font-family:var(--disp); font-size:24px; font-weight:800; font-variant-numeric:tabular-nums}
+.verdict{border-radius:10px; padding:12px 16px; font-weight:700; font-size:15px}
+.verdict.ok{background:#E7F3E8; color:#1E5E22}
+.verdict.warn{background:#FFF3E0; color:#8A4B06}
+.verdict.bad{background:#FDECEC; color:#8E1F1F}
+.sim-how{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px}
+@media (max-width:800px){.sim-how{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sim-how div{border-top:3px solid var(--azul); padding-top:10px; font-size:14px; color:var(--tinta2)}
+.sim-how b{display:block; color:var(--tinta); font-size:14.5px}
+.note{font-size:12.5px; color:var(--cinza)}
+.simple{margin-top:4px; background:var(--azul-fr); border-radius:10px; padding:12px 14px; font-size:15px; color:var(--azul-esc)}
+.simple b{font-family:var(--disp); font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; display:block; margin-bottom:2px; color:var(--azul)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important; transition:none!important}}
 </style>
 
@@ -200,7 +268,7 @@ footer b{color:#fff}
 <header class="top">
   <div class="wrap">
     <img src="data:image/png;base64,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" alt="Marka Engenharia">
-    <span class="meta">Vale S.A. · TFPM · Oficina de Manutenção de Carros de Passageiros</span>
+    <nav class="topnav" aria-label="Seções"><a href="#entenda">Entenda a via</a><a href="#execucao">Execução</a><a href="#recursos">Recursos</a><a href="#interfaces">Interfaces</a></nav>
   </div>
 </header>
 
@@ -219,6 +287,113 @@ footer b{color:#fff}
 </section>
 
 <main>
+<section class="learn" id="entenda">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Entenda a via</p>
+        <h2>Como uma via férrea funciona por dentro</h2>
+        <p class="sub">A via é um conjunto de camadas. Cada uma espalha o peso do trem para a de baixo, até ele chegar fraco ao solo. Clique nas peças do corte e ligue <b>Passar o trem</b>.</p>
+      </div>
+    </div>
+
+    <div class="learn-grid">
+      <div class="learn-draw">
+        <svg id="corte" viewBox="0 0 700 380" role="img" aria-label="Corte transversal da via férrea com trilho, fixação, dormente, lastro, sublastro e subleito">
+          <defs><marker id="ma" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#475261" stroke-width="1.5" stroke-linecap="round"/></marker>
+          <pattern id="pedra" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" fill="#AEB5BE"/><circle cx="4" cy="4" r="2.6" fill="#8F97A2"/><circle cx="12" cy="4" r="1.8" fill="#C9CFD6"/><circle cx="8" cy="11" r="2.8" fill="#99A1AB"/><circle cx="14" cy="13" r="1.6" fill="#7F8893"/><circle cx="2" cy="13" r="1.5" fill="#C4CAD2"/></pattern></defs>
+          <g class="part" data-k="solo"><rect x="20" y="304" width="440" height="56" rx="3" fill="#A88A6A"/></g>
+          <g class="part" data-k="sub"><polygon points="50,272 430,272 460,304 20,304" fill="#D6C5A6"/></g>
+          <g class="part" data-k="lastro"><polygon points="104,196 376,196 420,272 60,272" fill="url(#pedra)"/></g>
+          <g class="part" data-k="dorm"><rect x="96" y="190" width="288" height="20" rx="3" fill="#C3C8CE" stroke="#8A9199" stroke-width="1"/></g>
+          <g class="part" data-k="trilho" fill="#3A4452">
+            <rect x="146" y="182" width="34" height="6"/><rect x="159" y="166" width="8" height="16"/><rect x="153" y="154" width="20" height="12" rx="2"/>
+            <rect x="300" y="182" width="34" height="6"/><rect x="313" y="166" width="8" height="16"/><rect x="307" y="154" width="20" height="12" rx="2"/></g>
+          <g class="part" data-k="fix" fill="none" stroke="#C9A84C" stroke-width="3.5" stroke-linecap="round">
+            <path d="M141 190 Q141 178 150 180"/><path d="M185 190 Q185 178 176 180"/><path d="M295 190 Q295 178 304 180"/><path d="M339 190 Q339 178 330 180"/>
+            <rect x="146" y="188" width="34" height="2" fill="#23272E" stroke="none"/><rect x="300" y="188" width="34" height="2" fill="#23272E" stroke="none"/></g>
+          <g id="gauge" class="part" data-k="bitola">
+            <line x1="175" y1="138" x2="305" y2="138" stroke="#475261" stroke-width="1.2" marker-start="url(#ma)" marker-end="url(#ma)"/>
+            <text x="240" y="128" text-anchor="middle" style="font:700 13px Arial, sans-serif; fill:#475261">bitola 1,60 m</text></g>
+          <g id="wheels" class="off">
+            <rect x="150" y="96" width="180" height="7" rx="3" fill="#5F5E5A"/>
+            <circle cx="163" cy="118" r="36" fill="#6B7684" fill-opacity=".55"/><circle cx="317" cy="118" r="36" fill="#6B7684" fill-opacity=".55"/>
+            <circle cx="163" cy="118" r="7" fill="#23405F"/><circle cx="317" cy="118" r="7" fill="#23405F"/></g>
+          <g id="fan" class="off" stroke="#E08A1E" stroke-width="2.5" stroke-linecap="round">
+            <line x1="163" y1="170" x2="126" y2="344"/><line x1="163" y1="170" x2="163" y2="344"/><line x1="163" y1="170" x2="200" y2="344"/>
+            <line x1="317" y1="170" x2="280" y2="344"/><line x1="317" y1="170" x2="317" y2="344"/><line x1="317" y1="170" x2="354" y2="344"/>
+            <line x1="163" y1="170" x2="60" y2="344" stroke-opacity=".5"/><line x1="317" y1="170" x2="420" y2="344" stroke-opacity=".5"/></g>
+          <g stroke="#9AA3AD" stroke-width="1" stroke-dasharray="3 3" fill="none">
+            <line x1="240" y1="138" x2="486" y2="54"/><line x1="327" y1="158" x2="486" y2="102"/><line x1="339" y1="184" x2="486" y2="150"/>
+            <line x1="384" y1="200" x2="486" y2="198"/><line x1="402" y1="242" x2="486" y2="246"/><line x1="446" y1="290" x2="486" y2="294"/><line x1="460" y1="336" x2="486" y2="342"/></g>
+          <g class="lbl" data-k="bitola"><rect x="490" y="38" width="200" height="26"/><text x="494" y="58">Bitola</text></g>
+          <g class="lbl on" data-k="trilho"><rect x="490" y="86" width="200" height="26"/><text x="494" y="106">Trilho TR 68</text></g>
+          <g class="lbl" data-k="fix"><rect x="490" y="134" width="200" height="26"/><text x="494" y="154">Fixação Fast-Clip</text></g>
+          <g class="lbl" data-k="dorm"><rect x="490" y="182" width="200" height="26"/><text x="494" y="202">Dormente</text></g>
+          <g class="lbl" data-k="lastro"><rect x="490" y="230" width="200" height="26"/><text x="494" y="250">Lastro de brita</text></g>
+          <g class="lbl" data-k="sub"><rect x="490" y="278" width="200" height="26"/><text x="494" y="298">Sublastro</text></g>
+          <g class="lbl" data-k="solo"><rect x="490" y="326" width="200" height="26"/><text x="494" y="346">Subleito (solo)</text></g>
+        </svg>
+        <div class="learn-tools">
+          <button type="button" class="switch" id="trem" aria-pressed="false"><span class="trk"></span>Passar o trem</button>
+          <span class="hint" id="trem-hint">Ligue para ver o peso descendo pelas camadas.</span>
+        </div>
+      </div>
+      <div class="learn-info" aria-live="polite">
+        <div class="chips-l" id="learn-chips"></div>
+        <h3 id="li-t"></h3>
+        <div class="qa">
+          <div><b>O que é</b><span id="li-q"></span></div>
+          <div><b>Para que serve</b><span id="li-p"></span></div>
+          <div class="ana"><b>Pense assim</b><span id="li-c"></span></div>
+          <div><b>Onde entra na execução</b><span id="li-e"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sim" id="alivio-sim">
+      <div class="sim-head">
+        <p class="eyebrow">Por que existe o alívio de tensão</p>
+        <h3>O trilho soldado não tem folga para dilatar</h3>
+        <p>O aço cresce no calor e encolhe no frio. Solto, uma barra de 120 m muda de tamanho; soldado e preso, ele não pode, e essa vontade vira força dentro do trilho. Compare o trilho fixado sem alívio com o trilho neutralizado.</p>
+      </div>
+      <div class="sim-body">
+        <div class="seg" role="group" aria-label="Condição do trilho">
+          <button type="button" id="m0" class="on">Fixado sem alívio (25 °C, madrugada)</button>
+          <button type="button" id="m1">Neutralizado (exemplo: 38 °C)</button>
+        </div>
+        <div class="slider">
+          <label for="temp">Temperatura do trilho</label>
+          <input type="range" id="temp" min="10" max="65" step="1" value="55">
+          <output id="temp-o" for="temp">55 °C</output>
+        </div>
+        <svg id="railsvg" viewBox="0 0 700 170" role="img" aria-label="Trilho visto de cima, preso nas pontas, deformando com a temperatura">
+          <defs><marker id="mb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="context-stroke"/></marker></defs>
+          <rect x="50" y="60" width="22" height="56" rx="4" fill="#23405F"/><rect x="628" y="60" width="22" height="56" rx="4" fill="#23405F"/>
+          <text x="61" y="50" text-anchor="middle" style="font:700 12px Arial, sans-serif; fill:#475261">fixo</text>
+          <text x="639" y="50" text-anchor="middle" style="font:700 12px Arial, sans-serif; fill:#475261">fixo</text>
+          <path id="rl" d="M72 88 Q350 88 628 88" fill="none" stroke="#3A4452" stroke-width="9" stroke-linecap="round"/>
+          <g id="ar" stroke-width="3"><line id="a1" x1="100" y1="140" x2="150" y2="140" marker-end="url(#mb)"/><line id="a2" x1="600" y1="140" x2="550" y2="140" marker-end="url(#mb)"/></g>
+          <text id="rl-t" x="350" y="146" text-anchor="middle" style="font:700 13px Arial, sans-serif; fill:#475261"></text>
+        </svg>
+        <div class="kpis">
+          <div><small>Diferença para a temperatura em que foi preso</small><b id="k1"></b></div>
+          <div><small>Força presa em cada trilho</small><b id="k2"></b></div>
+          <div><small>Quanto 120 m cresceriam se estivessem soltos</small><b id="k3"></b></div>
+        </div>
+        <p class="verdict" id="verd"></p>
+        <div class="sim-how">
+          <div><b>1. Soltar</b>Fixações e talas retiradas; trilho apoiado em roletes.</div>
+          <div><b>2. Acomodar</b>Apiloamento com marreta de bronze distribui a tensão.</div>
+          <div><b>3. Esticar</b>Tensionador hidráulico traciona até o valor especificado.</div>
+          <div><b>4. Prender</b>Trilho refixado na condição neutra e conferido.</div>
+        </div>
+        <p class="note">Valores aproximados para trilho TR 68: cerca de 2 toneladas de força por grau de diferença. Temperaturas e faixas de risco são ilustrativas; os valores de execução vêm do projeto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="explorer" id="execucao">
   <div class="wrap">
     <div class="sec-head">
@@ -322,6 +497,7 @@ const STEPS = [
  {id:"descarga", f:1, item:"6.4.2.11", short:"Descarga dos TLS", title:"Descarga e distribuição dos TLS",
   cap:"Trem posicionado; TLS descarregados e dispostos ao lado da via, fora do gabarito.",
   resumo:"Os Trilhos Longos Soldados chegam de trem e são descarregados de forma mecanizada, sem impacto nem empeno, e posicionados ao lado da via para a montagem.",
+  simples:"Os trilhos chegam de trem em barras de mais de 8 toneladas. Tiramos devagar, com máquina, porque trilho empenado não serve, e deixamos deitados ao lado da via, fora do caminho do trem.",
   groups:[{g:null, items:[
    ["Inspeção prévia","Área de descarga, acessos, espaço de manobra e posicionamento do trem com os vagões."],
    ["Checagem de equipamentos","Munck, carregadeira com garfo, carreta, tenaz, alavancas e macacos hidráulicos."],
@@ -335,6 +511,7 @@ const STEPS = [
  {id:"amv", f:1, item:"6.4.2.12", short:"Montagem dos AMVs", title:"Montagem dos AMVs",
   cap:"AMV montado sobre vigotas de madeira e ligado à linha existente.",
   resumo:"Montagem em duas etapas: pré-montagem conferida em gabarito, fora da via, e remontagem definitiva no trecho seguindo a numeração das vigotas. Reduz o tempo de intervenção na linha.",
+  simples:"O AMV é o desvio, onde a linha se divide em duas. Por ser uma peça de precisão, montamos primeiro ao lado, conferimos tudo, numeramos as vigotas e remontamos no lugar como um quebra-cabeça.",
   groups:[
    {g:"Pré-montagem no gabarito", items:[
     ["Eixos e trilhos de apoio","Eixos da linha principal e da desviada preparados para mover as vigas."],
@@ -354,6 +531,7 @@ const STEPS = [
  {id:"grade", f:1, item:"6.4.2.13", short:"Grade ferroviária", title:"Construção da grade ferroviária",
   cap:"Dormentes de concreto, trilhos TR 68 e juntas com talas TJ 68.",
   resumo:"A grade é montada com trilho TR 68 em barras de 120 m, dormentes de concreto e fixação Pandrol Fast-Clip, com inspeção do conjunto antes de liberar a frente para solda.",
+  simples:"Montamos a escada da via: dormentes de concreto na distância certa, trilhos por cima, emendas provisórias com talas e grampos elásticos prendendo cada trilho.",
   specs:["TR 68 · barras de 120 m","Dormente de concreto","Tala de junção TJ 68","Pandrol Fast-Clip"],
   groups:[{g:null, items:[
    ["Distribuição dos materiais","Trilhos, dormentes e fixações ao longo da linha com Munck e carregadeira."],
@@ -368,6 +546,7 @@ const STEPS = [
  {id:"solda", f:2, item:"6.4.2.14", short:"Soldagem aluminotérmica", title:"Soldagem aluminotérmica dos trilhos",
   cap:"As juntas entre barras recebem solda aluminotérmica e formam o TLS.",
   resumo:"A solda aluminotérmica une as barras e forma os Trilhos Longos Soldados. Controlamos alinhamento das pontas, vedação da forma, pré-aquecimento e tempo de reação.",
+  simples:"Tiramos as emendas e soldamos as pontas. Uma reação química gera aço líquido a mais de 2.000 °C, que enche a forma em volta da junta. A via fica sem emendas.",
   groups:[{g:null, items:[
    ["Posicionamento das pontas","Extremidades alinhadas com Munck, carregadeira, tenaz, alavancas e macacos."],
    ["Corte e limpeza","Máquina de cortar trilho ajusta as pontas ao padrão de soldagem."],
@@ -381,6 +560,7 @@ const STEPS = [
  {id:"lastro", f:2, item:"6.4.2.15", short:"Lastreamento", title:"Lastreamento",
   cap:"Brita descarregada pelos Vagões HNT e espalhada entre os dormentes.",
   resumo:"A brita chega pelos Vagões HNT da Vale, é espalhada com carregadeira de concha, nivelada, compactada e acabada até a seção de projeto.",
+  simples:"A brita chega nos vagões da Vale e é espalhada entre os dormentes. Ela é o colchão da via: espalha o peso, escoa a chuva e trava os dormentes.",
   groups:[{g:null, items:[
    ["Descarga com Vagões HNT Vale","Brita descarregada em pontos espaçados ao longo da plataforma."],
    ["Espalhamento mecanizado","Carregadeira com concha distribui o material entre os dormentes."],
@@ -393,6 +573,7 @@ const STEPS = [
  {id:"geometria", f:2, item:"6.4.2.16", short:"Geometria e socaria", title:"Nivelamento, alinhamento, socaria e regularização",
   cap:"Grade levada ao eixo e às cotas de projeto; socaria consolida o lastro.",
   resumo:"A via ganha a geometria de projeto: alinhamento pelas referências topográficas, nivelamento longitudinal e transversal, socaria mecanizada e verificação final antes da liberação.",
+  simples:"Deixamos a via reta e na altura certa. A socadora vibra a brita embaixo de cada dormente para ele ficar bem apoiado, e medimos bitola e inclinação das curvas.",
   specs:["Alinhamento","Nivelamento","Bitola","Superelevação"],
   groups:[{g:null, items:[
    ["Alinhamento","Puxamento da grade pelas referências topográficas; flechas uniformes nas curvas."],
@@ -406,6 +587,7 @@ const STEPS = [
  {id:"alivio", f:3, item:"6.4.2.17", short:"Alívio de tensão", title:"Alívio de tensão",
   cap:"Barra sobre roletes, tracionada até a neutralização do trilho.",
   resumo:"Neutraliza o TLS para evitar tensões residuais indesejadas. Só começa com o trecho liberado e o trilho dentro do limite estabelecido em relação à temperatura neutra.",
+  simples:"Trilho soldado não tem folga para dilatar. Soltamos, esticamos com um macaco hidráulico até a condição neutra e prendemos de novo, para ele não entortar no calor nem partir no frio.",
   groups:[{g:null, items:[
    ["Abertura do trecho liberado","Retirada de fixações e talas com insersor, extrator e parafusadeira."],
    ["Roletes sob o patim","Barra livre para deslocamento longitudinal."],
@@ -421,6 +603,7 @@ const STEPS = [
  {id:"pn", f:3, item:"6.4.2.18", short:"Passagens em nível", title:"Desmontagem e montagem de passagem em nível",
   cap:"Nova passagem em nível com placas poliméricas sobre a via.",
   resumo:"A PN existente é desmontada com segregação total do material e a nova é montada com placas poliméricas, conferindo nivelamento e transição com o pavimento.",
+  simples:"Onde carro e pedestre cruzam a linha, tiramos a travessia antiga e montamos placas de borracha técnica niveladas com o asfalto.",
   groups:[
    {g:"Desmontagem da PN existente", items:[
     ["Retirada das fixações","Grampos, parafusos e chapas separados e organizados."],
@@ -437,6 +620,7 @@ const STEPS = [
  {id:"limitadores", f:3, item:"6.4.2.19", short:"Limitadores e marcos", title:"Limitadores de curso, marcos quilométricos e de segurança",
   cap:"Limitador de curso no fim da linha; marcos quilométricos e de segurança posicionados.",
   resumo:"Última etapa: os elementos de segurança e referência da via, instalados nas posições de projeto com foco em estabilidade, alinhamento e visibilidade.",
+  simples:"Colocamos o para-choque no fim da linha, o marco que mostra até onde um vagão pode parar sem bater no desvio e as placas de quilometragem.",
   groups:[{g:null, items:[
    ["Preparação dos locais","Limpeza e regularização com retroescavadeira e escavadeira."],
    ["Posicionamento das peças","Munck e equipamentos de apoio nos pontos definidos em projeto."],
@@ -508,7 +692,7 @@ function renderDetail(i){
   const groups = s.groups.map(g => (g.g ? `<p class="group-l">${esc(g.g)}</p>` : `<p class="group-l">Sequência executiva</p>`) +
     `<ol class="steps">${g.items.map(([t,d])=>{ n++; return `<li style="animation-delay:${n*45}ms"><span class="k">${n}</span><div><b>${esc(t)}</b><span>${esc(d)}</span></div></li>`; }).join("")}</ol>`).join("");
   $("#d-left").innerHTML = `
-    <div class="d-title"><p class="eyebrow">Etapa ${String(i+1).padStart(2,"0")} · Item ${s.item} · Fase ${s.f}</p><h3>${esc(s.title)}</h3><p>${esc(s.resumo)}</p></div>
+    <div class="d-title"><p class="eyebrow">Etapa ${String(i+1).padStart(2,"0")} · Item ${s.item} · Fase ${s.f}</p><h3>${esc(s.title)}</h3><p>${esc(s.resumo)}</p><p class="simple"><b>Em palavras simples</b>${esc(s.simples)}</p></div>
     ${s.specs ? `<div class="chips specs">${s.specs.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div>` : ""}
     ${groups}
     ${s.alert ? `<div class="alert">${WARN}<span>${esc(s.alert)}</span></div>` : ""}
@@ -602,6 +786,75 @@ $("#play").onclick = play;
 buildStepper(); buildMatrix(); buildCards();
 let start = 0; try{ const v = parseInt(localStorage.getItem("via-etapa"),10); if(v>=0 && v<=8) start = v; }catch(e){}
 go(start);
+</script>
+
+<script>
+(function(){
+const P = {
+ trilho:["Trilho TR 68","Barra de aço onde a roda apoia e corre. TR 68 quer dizer cerca de 68 kg por metro: uma barra de 120 m passa de 8 toneladas.","Sustentar e guiar a roda. É a peça que recebe o peso direto do trem.","É o asfalto do trem, só que em duas faixas estreitas de aço.","Etapas 01, 03, 04 e 07: descarga, grade, solda e alívio de tensão."],
+ fix:["Fixação Pandrol Fast-Clip","Grampo de aço elástico que prende o trilho no dormente, com uma palmilha de borracha entre os dois.","Manter o trilho no lugar, sem tombar nem escorregar, e amortecer a vibração.","Um prendedor de roupa de aço: aperta por pressão, sem parafuso.","Etapa 03, na construção da grade; é solta e recolocada no alívio de tensão."],
+ dorm:["Dormente","Viga atravessada embaixo dos trilhos. Na linha é de concreto; no AMV são vigotas de madeira.","Manter os dois trilhos sempre na mesma distância e passar o peso para a brita.","Os degraus de uma escada deitada no chão.","Etapas 02 e 03: montagem do AMV e da grade."],
+ lastro:["Lastro de brita","Camada de pedra britada em volta e embaixo dos dormentes.","Espalhar o peso, deixar a chuva escoar rápido e travar os dormentes para não andarem.","O colchão da via. Pedra pontuda se trava; areia não faria isso.","Etapas 05 e 06: lastreamento e socaria."],
+ sub:["Sublastro","Camada de material granular compactado, executada antes da superestrutura (item 6.4.2.10).","Fazer a transição entre brita e solo: a brita não afunda no barro e o barro não sobe para a brita.","O contrapiso antes do porcelanato.","Já está pronto quando a superestrutura começa. É a base de trabalho."],
+ solo:["Subleito","O terreno natural, regularizado e compactado.","Ser a fundação de tudo. Recebe o peso já espalhado e fraco.","O terreno onde a casa é construída.","Faz parte da terraplenagem, antes da superestrutura."],
+ bitola:["Bitola","Distância entre as faces internas dos dois trilhos. Na bitola larga, 1,60 m.","Precisa ser exata: se abrir, a roda cai entre os trilhos; se fechar, o rodeiro trava.","A largura do eixo de um carrinho que precisa encaixar certinho no trilho.","Conferida no gabarito (etapas 02 e 03) e no trolley (etapa 06)."]
+};
+const order=["trilho","fix","dorm","lastro","sub","solo","bitola"];
+const chips=document.getElementById("learn-chips");
+chips.innerHTML=order.map(k=>`<button type="button" data-k="${k}">${P[k][0].split(" (")[0].replace(" Pandrol","")}</button>`).join("");
+function show(k){
+  const d=P[k];
+  document.getElementById("li-t").textContent=d[0];
+  document.getElementById("li-q").textContent=d[1];
+  document.getElementById("li-p").textContent=d[2];
+  document.getElementById("li-c").textContent=d[3];
+  document.getElementById("li-e").textContent=d[4];
+  document.querySelectorAll("#corte .lbl").forEach(e=>e.classList.toggle("on",e.dataset.k===k));
+  document.querySelectorAll("#learn-chips button").forEach(e=>e.classList.toggle("on",e.dataset.k===k));
+  document.querySelectorAll("#corte .part").forEach(e=>e.classList.toggle("dim",e.dataset.k!==k));
+}
+document.getElementById("corte").addEventListener("click",e=>{const g=e.target.closest("[data-k]"); if(g) show(g.dataset.k);});
+chips.addEventListener("click",e=>{const b=e.target.closest("[data-k]"); if(b) show(b.dataset.k);});
+const tb=document.getElementById("trem");
+tb.addEventListener("click",()=>{
+  const on=tb.getAttribute("aria-pressed")!=="true";
+  tb.setAttribute("aria-pressed",on);
+  document.getElementById("fan").classList.toggle("off",!on);
+  document.getElementById("wheels").classList.toggle("off",!on);
+  document.getElementById("gauge").style.opacity=on?0:1;
+  document.querySelectorAll("#corte .part").forEach(e=>e.classList.remove("dim"));
+  document.getElementById("trem-hint").textContent=on?"O peso sai concentrado na roda e chega espalhado e fraco no solo.":"Ligue para ver o peso descendo pelas camadas.";
+});
+show("trilho");
+
+let lock=25;
+const temp=document.getElementById("temp");
+function setMode(m){lock=m?38:25; document.getElementById("m0").classList.toggle("on",!m); document.getElementById("m1").classList.toggle("on",!!m); upd();}
+function upd(){
+  const T=+temp.value, d=T-lock, F=Math.round(2.1*Math.abs(d)), L=Math.round(120*11.5e-6*Math.abs(d)*1000);
+  document.getElementById("temp-o").textContent=T+" °C";
+  document.getElementById("k1").textContent=(d>0?"+":"")+d+" °C";
+  document.getElementById("k2").textContent=d===0?"zero":F+" t "+(d>0?"empurrando":"puxando");
+  document.getElementById("k3").textContent=L+" mm";
+  const amp=d>20?Math.min(52,(d-20)*3):0;
+  const rl=document.getElementById("rl"); rl.setAttribute("d","M72 88 Q350 "+(88-amp*2)+" 628 88");
+  const c=d>20?"#C62828":d>8?"#E08A1E":d<-20?"#3871C1":"#3A4452"; rl.setAttribute("stroke",c);
+  const ar=document.getElementById("ar"); ar.style.opacity=Math.abs(d)<3?0:1; ar.setAttribute("stroke",c);
+  const a1=document.getElementById("a1"), a2=document.getElementById("a2");
+  if(d>0){a1.setAttribute("x1",100);a1.setAttribute("x2",150);a2.setAttribute("x1",600);a2.setAttribute("x2",550);}
+  else{a1.setAttribute("x1",150);a1.setAttribute("x2",100);a2.setAttribute("x1",550);a2.setAttribute("x2",600);}
+  document.getElementById("rl-t").textContent=Math.abs(d)<3?"Trilho sem tensão":d>0?"O aço quer crescer e é empurrado pelas pontas":"O aço quer encolher e é puxado pelas pontas";
+  const v=document.getElementById("verd");
+  if(d>20){v.className="verdict bad"; v.textContent="Risco de flambagem: o trilho pode envergar de lado e tirar o trem da linha.";}
+  else if(d<-20){v.className="verdict warn"; v.textContent="Risco de ruptura: no frio, o trilho puxado pode partir numa solda.";}
+  else if(Math.abs(d)>8){v.className="verdict warn"; v.textContent="Tensão moderada: a via aguenta, mas é margem de segurança que se perde.";}
+  else{v.className="verdict ok"; v.textContent="Faixa segura: a força no trilho é pequena. É isso que o alívio de tensão garante.";}
+}
+document.getElementById("m0").onclick=()=>setMode(0);
+document.getElementById("m1").onclick=()=>setMode(1);
+temp.addEventListener("input",upd);
+setMode(0);
+})();
 </script>
 
 </body>
